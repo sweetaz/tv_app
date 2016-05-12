@@ -4,7 +4,7 @@
 	<style>
 		body {background-color:lightgrey;}
 		h1   {color:blue;}
-		p    {color:green;}
+		.online    {color:green;}
 	</style>
 	<script type="text/javascript" src="https://code.jquery.com/jquery-2.2.3.min.js"></script>
 	<script type="text/javascript">
@@ -13,8 +13,9 @@
 				url: "http://tv.az.nz:1985/api/v1/streams/",
 				dataType: "jsonp",
 				success: function( response ) {
+					var streams = response.streams;
 					var items = [];
-					$.each( response.streams, function( key, val ) {
+					$.each( streams, function( key, val ) {
 						var klass = '';
 						if( val.video ){
 							klass = 'online';
