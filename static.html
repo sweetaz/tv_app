@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<style>
+		body {background-color:lightgrey;}
+		h1   {color:blue;}
+		p    {color:green;}
+	</style>
+	<script type="text/javascript" src="https://code.jquery.com/jquery-2.2.3.min.js"></script>
+	<script type="text/javascript">
+		function loadStreams() {
+			$.ajax({
+				url: "http://tv.az.nz:1985/api/v1/streams/",
+				dataType: "jsonp",
+				success: function( response ) {
+					var items = [];
+					$.each( response.streams, function( key, val ) {
+						var klass = '';
+						if( val.video ){
+							klass = 'online';
+						}
+						items.push( "<li id='" + key + "' class='stream " + klass + "'>" + val.app + "/" + val.name + "</li>" );
+	 				});
+					$( "<ul/>", {
+						"class": "my-new-list",
+						html: items.join( "" )
+					}).appendTo( "body" );
+				}
+			});
+		}
+	</script>
+</head>
+<body>
+	<script type="text/javascript">
+		loadStreams();
+	</script>
+</body>
+</html>
