@@ -1,0 +1,21 @@
+<div>
+	<div class="col-md-3">
+		<div>Channels</div>
+		<div>
+			title: {{input value=title}}
+			<button {{action 'addChannel'}}>Add</button>
+		</div>
+		<div>
+			<ul>
+				{{#each model as |channel|}}
+					<li>{{channel.title}}</li>
+				{{else}}
+					<div>No channels found</div>
+				{{/each}}
+			</ul>
+		</div>
+	</div>
+	<div class="col-md-9">
+		{{outlet}}
+	</div>
+</div>
