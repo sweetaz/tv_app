@@ -1,19 +1,35 @@
-<div class="container">
-	<div class="row">
-		<div class="col-md-2">Welcome to EmberNote</div>
-		<div class="col-md-10">
-			{{#if user}}
-				Hello, {{user.name}}
-			{{/if}}
-			{{#unless user}}
-				{{#link-to 'register'}}register{{/link-to}}
-				{{#link-to 'login'}}login{{/link-to}}
-			{{/unless}}
-		</div>
+<div id="body">
+	<div id="header">
+		{{render 'header'}}
 	</div>
-	<div class="row">
-		<div>
-			{{outlet}}
-		</div>
+
+	<div id="sidebar">
+		{{render 'sidebar'}}
+	</div>
+
+	<div class="container">
+		{{render 'main'}}
+	</div>
+
+	<div>
+		{{outlet}}
 	</div>
 </div>
+<!-- <div id="body">
+	<div id="header">
+		<div id="logo">tv.az.nz</div>
+	</div>
+
+	<div id="sidebar">
+	</div>
+
+	<div id="content">
+        <h1>Foo</h1>
+        <div class="primary"><p>Primary</p></div>
+        <div>
+            <div class="secondary"><p>Secondary 1</p></div>
+            <div class="secondary"><p>Secondary 2</p></div>
+            <div class="secondary"><p>Secondary 3</p></div>
+        </div>
+	</div>
+</div> -->

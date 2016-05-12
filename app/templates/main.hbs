@@ -1,0 +1,15 @@
+<div class="row">
+	<div class="col-md-10">
+		{{#if user}}
+			Hello, {{user.name}}
+		{{/if}}
+		{{#unless user}}
+			{{#link-to 'register'}}register{{/link-to}}
+			{{#link-to 'login'}}login{{/link-to}}
+		{{/unless}}
+	</div>
+</div>
+<div class="row">
+	<div>
+	</div>
+</div>

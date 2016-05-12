@@ -35,7 +35,6 @@ p {
 	padding: 4px 0.3em;
 }
 #body {
-	height: 100%;
 }
 .primary, .secondary {
 	background-color: #ededed;
@@ -64,5 +63,4 @@ p {
 	border-right: 1px solid #e6e6e6;
 	font-weight: 400;
 	color: #6f6f6f;
-	height: 100%;
 }
